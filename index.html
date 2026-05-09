@@ -85,6 +85,21 @@
       left: 12px;
     }
 
+    .noise {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.03;
+      z-index: 0;
+      background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+    }
+
+    .site-shell,
+    .skip-link {
+      position: relative;
+      z-index: 1;
+    }
+
     .site-shell {
       max-width: var(--max-width);
       margin: 0 auto;
@@ -173,6 +188,7 @@
       gap: 12px;
       flex-wrap: wrap;
       margin-top: 28px;
+      align-items: stretch;
     }
 
     .btn {
@@ -186,10 +202,12 @@
       font-family: var(--font-heading);
       font-weight: 700;
       font-size: 0.95rem;
-      transition: transform 0.18s ease, background 0.18s ease, opacity 0.18s ease;
+      transition: transform 0.18s ease, background 0.18s ease, opacity 0.18s ease, border-color 0.18s ease;
       min-height: 48px;
       border: 1px solid transparent;
       will-change: transform;
+      flex: 1 1 220px;
+      max-width: 340px;
     }
 
     .btn:hover {
@@ -209,6 +227,7 @@
 
     .btn-secondary:hover {
       background: rgba(255,255,255,0.06);
+      border-color: rgba(255, 255, 255, 0.14);
     }
 
     .section-grid {
@@ -244,6 +263,7 @@
     .pill {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       padding: 10px 14px;
       border-radius: 999px;
       background: rgba(255,255,255,0.03);
@@ -279,6 +299,9 @@
     }
 
     .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       color: var(--text);
       font-family: var(--font-heading);
       font-size: 0.92rem;
@@ -288,8 +311,15 @@
       background: rgba(255,255,255,0.03);
     }
 
+    .contact-links a:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255, 255, 255, 0.14);
+    }
+
     .fit-btn {
       width: fit-content;
+      flex: 0 0 auto;
+      max-width: none;
     }
 
     .footer-note {
@@ -323,21 +353,6 @@
     .value-mini p {
       margin-bottom: 0;
       font-size: 0.92rem;
-    }
-
-    .noise {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.03;
-      z-index: 0;
-      background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
-    }
-
-    .site-shell,
-    .skip-link {
-      position: relative;
-      z-index: 1;
     }
 
     .reveal {
@@ -405,12 +420,14 @@
         max-width: 100%;
       }
 
-      .btn {
-        width: 100%;
-      }
-
       .cta-row {
         gap: 10px;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: none;
+        flex: 1 1 100%;
       }
 
       .pill-list,
@@ -422,6 +439,14 @@
       .contact-links a {
         width: 100%;
         justify-content: center;
+      }
+
+      .final-cta {
+        align-items: stretch;
+      }
+
+      .fit-btn {
+        width: 100%;
       }
     }
 
@@ -522,8 +547,8 @@
           <span class="mini-label">Origin context</span>
           <h2>Why I held it.</h2>
           <p>
-            I bought silkk.app for a generative AI project. It was my first serious build where I tried to
-            do everything properly. The idea did not fail, the APIs did, and I dropped it out of frustration.
+            I bought silkk.app for a generative AI project. It was my first serious build where I tried to do
+            everything properly. The idea did not fail, the APIs did, and I dropped it out of frustration.
           </p>
           <p>
             When I came back later, my thinking had changed, so I rebuilt the same project under a different
