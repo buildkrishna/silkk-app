@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             { text: 'ℹ Negotiating handshakes: escrow secured', type: 'info', delay: 500 },
             { text: 'ℹ Transfer protocol: EPP immediate unlock ready', type: 'info', delay: 400 },
             { text: '', type: 'spacer', delay: 200 },
-            { text: '🚀 silkk.app is initialized!', type: 'header', delay: 300 },
+            { text: '~ silkk.app is initialized!', type: 'header', delay: 300 },
             { text: '  → Name:       silkk', type: 'metric', delay: 200 },
             { text: '  → Ext:        .app', type: 'metric', delay: 150 },
             { text: '  → Syllables:  1 (fluid vocal signature)', type: 'metric', delay: 150 },
